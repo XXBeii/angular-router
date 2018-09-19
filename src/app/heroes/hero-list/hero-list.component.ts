@@ -10,10 +10,9 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
     <ul class="heroes">
       <li *ngFor="let hero of heroes$ | async"
         [class.selected]="hero.id === selectedId"
-        (click)="onSelect(hero)">
-        <div [routerLink]="['/hero', hero.id]">
-          <span class="badge">{{ hero.id }}</span>{{ hero.name }}
-        </div>
+        (click)="onSelect(hero)"
+        [routerLink]="['/hero', hero.id]">
+        <span class="badge">{{ hero.id }}</span>{{ hero.name }}
       </li>
     </ul>
     <button routerLink="/sidekicks">Go to sidekicks</button>
